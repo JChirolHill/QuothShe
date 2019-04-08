@@ -52,7 +52,6 @@ def newQuote():
 
 # prints one quote at a time and loops until user goes back to main menu
 def viewSaved():
-    fileOut = open("quote.txt", "a")
     choice = "1"
     while choice != "3":
         if choice != "1" and choice != "2":
@@ -72,15 +71,15 @@ def viewSaved():
                     # rewrite to the file based on our list
                     fileOut = open("quote.txt", "a")
                     for quote in quoteList:
-                        print(quote + "\n", file = fileOut)
+                        print('wrote a quote')
+                        print(quote, file = fileOut)
+                    fileOut.close()
                     break;
                 elif choice == "3":
                     break
 
         if choice == "3":
             break
-
-    fileOut.close()
 
 # displays the main menu
 def main():
