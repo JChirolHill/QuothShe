@@ -11,6 +11,7 @@ for line in fileOut:
     quoteList.append(line)
 
 buffer = []
+bufferAuthors = []
 
 # # returns a random hardcoded quote
 # def getRandomQuote():
@@ -27,8 +28,9 @@ def getRandomQuote():
         allQuotes = data["quotes"]
         for quoteItem in allQuotes:
             buffer.append(quoteItem["body"])
+            bufferAuthors.append(quoteItem["author"])
 
-    return buffer.pop()
+    return buffer.pop() + " (" + bufferAuthors.pop() + ")"
 
 # Gets new quote and append to file
 def newQuote():
